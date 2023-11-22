@@ -28,6 +28,7 @@ html, body {
   color: #fff;
   font: normal 100 24px/28px XPLOIT;
 }
+
 .glitch {
   color: white;
   font-size: 65px;
@@ -35,6 +36,13 @@ html, body {
   width: 430px;
   margin: 0 auto;
   text-shadow: 0 0 45px rgba(255,255,255,.5);
+}
+
+@media screen and (max-width: 1000px){
+  .glitch {
+    font-size: 40px;
+    width: 265px;
+  }
 }
 
 @keyframes noise-anim {
