@@ -35,7 +35,6 @@ html, body {
   position: relative;
   width: 430px;
   margin: 0 auto;
-  text-shadow: 0 0 45px rgba(255,255,255,.5);
 }
 
 @media screen and (max-width: 1000px){
