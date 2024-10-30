@@ -1,0 +1,105 @@
+name: Deploy xploit.ltd
+
+on:
+  push:
+    branches:
+      - main2
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Clone repo
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            cd /home/xploit_ltd
+            git pull https://Rovniy:${{ secrets.GIT_USER_TOKEN }}@github.com/Rovniy/xploit.ltd.git
+
+      - name: Backup current Nginx configuration
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            cp /etc/nginx/sites-available/xploit.ltd /etc/nginx/sites-available/xploit.ltd.backup
+
+      - name: Update Nginx configuration
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            cp /home/xploit_ltd/xploit.ltd.nginx /etc/nginx/sites-available/xploit.ltd
+            ln -sf /etc/nginx/sites-available/xploit.ltd /etc/nginx/sites-enabled/xploit.ltd
+
+      - name: Test Nginx configuration
+        id: nginx_test
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            sudo nginx -t || (echo "Nginx configuration test failed" && exit 1)
+
+      - name: Restore previous Nginx configuration if test fails
+        if: failure()
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            cp /etc/nginx/sites-available/xploit.ltd.backup /etc/nginx/sites-available/xploit.ltd
+            sudo nginx -t && sudo systemctl restart nginx
+
+      - name: Restart Nginx
+        if: success() && steps.nginx_test.outcome == 'success'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            sudo systemctl restart nginx
+
+      - name: Create Docker build
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            cd /home/xploit_ltd
+            docker rmi -f $(docker images -q "xploitravy/xploit_ltd")
+            docker build . -t xploitravy/xploit_ltd:latest
+
+      - name: Restart Docker containers
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_SERVER_HOST }}
+          username: ${{ secrets.VPS_SERVER_USERNAME }}
+          key: ${{ secrets.VPS_SERVER_SSH_KEY }}
+          script: |
+            cd /home/xploit_ltd
+            docker-compose down
+            docker-compose up -d
+
+      - name: Send Telegram notification
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          curl -s -X POST https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ env.TELEGRAM_CHAT_ID }} -d text="https://xploit.ltd successfully updated! Commit: $LAST_COMMIT_MESSAGE"
+
