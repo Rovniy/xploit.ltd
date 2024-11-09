@@ -1,0 +1,5 @@
+User-agent: *
+
+User-agent: Yandex
+Clean-param: p
+Clean-param: _ym_debug
