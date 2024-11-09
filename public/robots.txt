@@ -1,4 +1,5 @@
 User-agent: *
+Disallow:
 
 User-agent: Yandex
 Clean-param: p
