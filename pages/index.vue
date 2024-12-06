@@ -15,6 +15,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: #d6d6d6;
 }
 .wrapper {
   display: flex;
@@ -200,3 +201,6 @@ html, body {
   animation: noise-anim-2 1s infinite linear alternate-reverse;
 }
 </style>
+
+<script setup lang="ts">
+</script>
