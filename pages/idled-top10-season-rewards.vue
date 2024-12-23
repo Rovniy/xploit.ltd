@@ -11,7 +11,7 @@
       <section>
         <h2>1. Prize Pool</h2>
         <ul>
-          <li>Total prize pool: <strong>$200 USD</strong> in <strong>TON cryptocurrency</strong>.</li>
+          <li>Total prize pool: <strong>$100 USD</strong> in <strong>TON cryptocurrency</strong>.</li>
           <li>Distribution of prizes:
             <ul>
               <li><strong>1st place</strong>: 30% of the prize pool.</li>
