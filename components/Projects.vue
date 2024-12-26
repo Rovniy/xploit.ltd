@@ -6,7 +6,6 @@ const data = {
     icon: '/project/idled_logo.webp',
     title: 'IDLED Survival',
     description: 'IDLED Survival is a survival game where you have to survive in a post-apocalyptic world.',
-    background: '_ipx/q_80/project/idled_bg.webp',
   },
   tbhc: {
     id: 'tbhc',
@@ -14,14 +13,12 @@ const data = {
     icon: '/project/tbhc_logo.webp',
     title: 'Tiny Boo: Homecong',
     description: 'Some description here',
-    background: '_ipx/q_80/project/tbhc_bg.webp',
   },
   secret: {
     id: 'secret',
     icon: '/project/secret_logo.webp',
     title: 'Sercet Project',
     description: 'Some description here',
-    background: '_ipx/q_80/project/secret_bg.webp',
   }
 }
 </script>

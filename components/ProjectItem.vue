@@ -5,7 +5,6 @@ interface IData {
   icon: string
   title: string
   description: string
-  background: string
 }
 interface IProps {
   data: IData|null
@@ -14,16 +13,15 @@ const props = withDefaults(defineProps<IProps>(), {
   data: null
 })
 
+const id = computed(() => props.data?.id)
 const icon = computed(() => props.data?.icon)
 const link = computed(() => props.data?.link || '')
-const background = computed(() => props.data?.background)
 const title = computed(() => props.data?.title)
 const description = computed(() => props.data?.description)
-const bgComputed = computed(() => `url(${background.value})`)
 </script>
 
 <template>
-  <NuxtLink :to="link" class="project" :style="{ 'background-image': bgComputed }">
+  <NuxtLink :to="link" :class="[ 'project', id ]">
     <div class="block">
       <NuxtImg :src="icon" alt="logo" class="logo" />
       <h2 class="title" v-text="title" />
@@ -53,6 +51,13 @@ const bgComputed = computed(() => `url(${background.value})`)
   text-decoration: none
   +desktop
     padding: 40px
+
+  &.idled
+    background-image: url('~/assets/images/project/idled_bg.webp')
+  &.tbhc
+    background-image: url('~/assets/images/project/tbhc_bg.webp')
+  &.secret
+    background-image: url('~/assets/images/project/secret_bg.webp')
 
   .block
     width: 100%
