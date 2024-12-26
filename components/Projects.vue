@@ -5,20 +5,20 @@ const data = {
     link: 'https://t.me/idled_bot/game',
     icon: '/project/idled_logo.webp',
     title: 'IDLED Survival',
-    description: 'IDLED Survival is a survival game where you have to survive in a post-apocalyptic world.',
+    description: 'A idle-clicker HTML5 Telegram game about the confrontation between humans and cute monsters.',
   },
   tbhc: {
     id: 'tbhc',
     link: 'https://tinyboohomecoming.com',
     icon: '/project/tbhc_logo.webp',
     title: 'Tiny Boo: Homecong',
-    description: 'Some description here',
+    description: 'A mobile game for iOS and Android about a little Boo who is trying to find his way home.',
   },
   secret: {
     id: 'secret',
     icon: '/project/secret_logo.webp',
-    title: 'Sercet Project',
-    description: 'Some description here',
+    title: 'Secret Project',
+    description: 'A secret project? which is under active development! The announcement will be in the 1st quarter of 2025.',
   }
 }
 </script>
