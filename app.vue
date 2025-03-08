@@ -7,7 +7,6 @@ useHead({
 });
 </script>
 
-
 <template>
     <NuxtLoadingIndicator />
 
