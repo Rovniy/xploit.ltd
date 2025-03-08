@@ -5,6 +5,11 @@ html, body
   padding: 0
   background: var(--uicolor-black)
   color: var(--uicolor-white)
+  min-height: 100vh
+
+#__nuxt
+  min-height: 100vh
+  +flex_start_column
 
 *
   box-sizing: border-box
@@ -30,8 +35,19 @@ h5
   margin: 20px 0
 
 p, span, a, blockquote
-  font: 700 16px/22px var(--main-font)
+  font: 400 16px/22px var(--main-font)
 
 .document_wrapper
   h1, h2, h3, h4, h5, p, span, ul, li, ol, a
     color: var(--uicolor-white)
+
+.container
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 20px
+  height: 100%
+  flex-grow: 1
+  text-align: center
+  +desktop
+    padding: 40px 20px

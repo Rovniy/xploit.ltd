@@ -1,3 +1,33 @@
+<template>
+  <div class="projects">
+    <div class="main">
+      <ProjectItem :data="data.idled" />
+    </div>
+
+    <div class="semi_area">
+      <div class="secondary">
+        <ProjectItem :data="data.tbhc" />
+      </div>
+      <div class="secondary">
+        <ProjectItem :data="data.zynthar" />
+      </div>
+    </div>
+
+    <div class="semi_area">
+      <div class="secondary">
+        <ProjectItem :data="data.diva_rogue" />
+      </div>
+      <div class="secondary">
+        <ProjectItem :data="data.secret" />
+      </div>
+    </div>
+
+    <div class="main">
+      <ProjectItem :data="data.secret_game" />
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 const data = {
   idled: {
@@ -18,60 +48,65 @@ const data = {
     id: 'secret',
     icon: '/project/secret_logo.webp',
     title: 'Secret Project',
-    description: 'A secret project? which is under active development! The announcement will be in the 1st quarter of 2025.',
+    description: 'A secret project? which is under active development! The announcement will be in the 2st quarter of 2025.',
+  },
+  secret_game: {
+    id: 'secret',
+    icon: '/project/secret_logo.webp',
+    title: 'Secret Game',
+    description: 'WOW! The game? which is under active development! The announcement will be in the 3st quarter of 2025.',
+  },
+  zynthar: {
+    id: 'zynthar',
+    link: '/project/zynthar',
+    icon: '/project/zynthar_logo.webp',
+    title: 'ZYNTHAR',
+    description: 'Zynthar is a musical force where chaos meets melody, and emotions turn into sound.',
+  },
+  diva_rogue: {
+    id: 'diva_rogue',
+    link: '/project/diva_rogue',
+    icon: '/project/diva_rogue_logo.webp',
+    title: 'Diva Rogue',
+    description: 'Diva Rogue is the raw, unapologetic voice of Brooklyn—a solo artist blending the grit of rap, the soul of R&B, and the power of pop into a fearless, electrifying sound.',
   }
 }
 </script>
 
-<template>
-  <div class="projects">
-    <div class="main">
-      <ProjectItem :data="data.idled" />
-    </div>
-    <div class="semi_area">
-      <div class="secondary">
-        <ProjectItem :data="data.tbhc" />
-      </div>
-      <div class="secondary">
-        <ProjectItem :data="data.secret" />
-      </div>
-    </div>
-  </div>
-</template>
+
 
 <style scoped lang="sass">
+$gap: 0px
+
 .projects
   width: 100%
   display: flex
   flex-direction: column
   flex-wrap: wrap
-  gap: 0
+  gap: $gap
   +desktop
     flex-direction: row
-    height: calc(80vh - var(--header_height))
-    min-height: 800px
+    //height: calc(80vh - var(--header_height))
+    //min-height: 800px
 
   .main
-    width: 100%
-    flex-grow: 1
+    width: calc(100% - #{$gap})
     height: 400px
     +desktop
-      width: 50%
-      height: 100%
+      width: calc(50% - #{$gap})
+      height: 800px
 
   .semi_area
     display: flex
     flex-direction: column
-    gap: 0
-    width: 100%
+    width: calc(100% - #{$gap})
     height: 100%
-    flex-grow: 1
+    gap: $gap
     +desktop
-      width: 50%
+      height: 800px
+      width: calc(50% - #{$gap})
 
     .secondary
       width: 100%
       height: 400px
-      +desktop
-        height: 50%
 </style>

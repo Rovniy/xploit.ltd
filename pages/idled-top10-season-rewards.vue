@@ -1,5 +1,14 @@
 <script setup lang="ts">
-
+useHead({
+  title: 'IDLED Survival',
+  meta: [
+    {
+      name: 'description',
+      content: 'The rules of the draws in the game IDLED Survival'
+    },
+    { name: 'keywords', content: 'xploit, games, projects, idled, survival' }
+  ]
+})
 </script>
 
 <template>

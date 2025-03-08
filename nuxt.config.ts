@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
 	app: {
 		head: {
-			title: 'XPLOIT Ltd.',
 			meta: [
 				{property: 'og:locale', content: 'en_US'},
 				{property: 'og:site_name', content: 'XPLOIT ltd.'},

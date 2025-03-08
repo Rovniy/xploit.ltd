@@ -41,7 +41,7 @@ const description = computed(() => props.data?.description)
   width: 100%
   background-repeat: no-repeat
   background-size: cover
-  background-position: 100% 100%
+  background-position: center center
   display: flex
   align-items: center
   justify-content: flex-start
@@ -51,6 +51,7 @@ const description = computed(() => props.data?.description)
   text-decoration: none
   +desktop
     padding: 40px
+    background-position: 100% 100%
 
   &.idled
     background-image: url('~/assets/images/project/idled_bg.webp')
@@ -58,6 +59,10 @@ const description = computed(() => props.data?.description)
     background-image: url('~/assets/images/project/tbhc_bg.webp')
   &.secret
     background-image: url('~/assets/images/project/secret_bg.webp')
+  &.zynthar
+    background-image: url('~/assets/images/project/zynthar_bg.webp')
+  &.diva_rogue
+    background-image: url('~/assets/images/project/diva_rogue_bg.webp')
 
   .block
     width: 100%

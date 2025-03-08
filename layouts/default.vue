@@ -3,13 +3,11 @@
 </script>
 
 <template>
-  <div class="layout_default">
-    <Header />
+  <Header />
 
-    <NuxtPage />
+  <NuxtPage />
 
-    <Footer />
-  </div>
+  <Footer />
 </template>
 
 <style scoped>
