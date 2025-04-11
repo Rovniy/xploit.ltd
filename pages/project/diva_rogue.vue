@@ -34,7 +34,17 @@ const links = [
     title: 'Apple Music',
     type: 'apple',
     href: 'https://music.apple.com/us/artist/diva-rogue/1791819506'
-  }
+  },
+  {
+    title: 'YouTube',
+    type: 'youtube',
+    href: 'https://www.youtube.com/@diva_rogue'
+  },
+  {
+    title: 'Instagram',
+    type: 'instagram',
+    href: 'https://www.instagram.com/diva.rogue'
+  },
 ]
 
 useHead({
