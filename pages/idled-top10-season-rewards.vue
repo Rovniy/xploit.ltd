@@ -42,6 +42,7 @@ useHead({
             </ul>
           </li>
           <li>No verification of honesty or gameplay integrity will be conducted.</li>
+          <li>It is forbidden to use multiple accounts for the game. Multiaccounts will be ignored and blocked at the discretion of the organizer.</li>
         </ul>
       </section>
       <section>
@@ -75,6 +76,7 @@ useHead({
               <li>Insufficient number of participants.</li>
             </ul>
           </li>
+          <li>The organizer reserves the right to block users for violating the rules of the community.</li>
         </ul>
       </section>
       <section>
