@@ -8,6 +8,7 @@
       <div class="secondary">
         <ProjectItem :data="data.tbhc" />
       </div>
+
       <div class="secondary">
         <ProjectItem :data="data.zynthar" />
       </div>
@@ -18,12 +19,12 @@
         <ProjectItem :data="data.diva_rogue" />
       </div>
       <div class="secondary">
-        <ProjectItem :data="data.secret" />
+        <ProjectItem :data="data.dusty_cassette" />
       </div>
     </div>
 
     <div class="main">
-      <ProjectItem :data="data.secret_game" />
+      <ProjectItem :data="data.secret" />
     </div>
   </div>
 </template>
@@ -69,11 +70,16 @@ const data = {
     icon: '/project/diva_rogue_logo.webp',
     title: 'Diva Rogue',
     description: 'Diva Rogue is the raw, unapologetic voice of Brooklyn—a solo artist blending the grit of rap, the soul of R&B, and the power of pop into a fearless, electrifying sound.',
+  },
+  dusty_cassette: {
+    id: 'dusty_cassette',
+    link: '/project/dusty_cassette',
+    icon: '/project/dusty_cassette_logo.webp',
+    title: 'Dusty Cassette',
+    description: 'Portland trio Dusty Cassette spins warm lo‑fi guitar‑synth indie that feels like a sunset drive.',
   }
 }
 </script>
-
-
 
 <style scoped lang="sass">
 $gap: 0px
