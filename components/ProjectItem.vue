@@ -63,6 +63,8 @@ const description = computed(() => props.data?.description)
     background-image: url('~/assets/images/project/zynthar_bg.webp')
   &.diva_rogue
     background-image: url('~/assets/images/project/diva_rogue_bg.webp')
+  &.dusty_cassette
+    background-image: url('~/assets/images/project/dusty_cassette_bg.webp')
 
   .block
     width: 100%
