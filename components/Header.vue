@@ -8,8 +8,13 @@
     </NuxtLink>
 
     <div class="social">
-      <NuxtLink to="https://x.com/xploitltd" class="icon"><NuxtImg src="/misc/x.svg" alt="x" /></NuxtLink>
-      <NuxtLink to="https://t.me/xploitravy" class="icon"><NuxtImg src="/misc/telegram.svg" alt="telegram" /></NuxtLink>
+<!--      <NuxtLink to="https://x.com/xploitltd" class="icon">-->
+<!--        <NuxtImg src="/misc/x.svg" alt="x" />-->
+<!--      </NuxtLink>-->
+
+      <NuxtLink to="https://t.me/xploitravy" class="icon">
+        <NuxtImg src="/misc/telegram.svg" alt="telegram" />
+      </NuxtLink>
     </div>
   </div>
 </template>
