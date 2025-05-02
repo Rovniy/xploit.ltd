@@ -18,10 +18,18 @@ const icon = computed(() => props.data?.icon)
 const link = computed(() => props.data?.link || '')
 const title = computed(() => props.data?.title)
 const description = computed(() => props.data?.description)
+const backgroundStyle = computed(() => {
+  if (!id.value) return {}
+
+  return {
+    backgroundImage: `url('/_nuxt/assets/images/project/${id.value}_bg.webp')`
+  }
+})
+
 </script>
 
 <template>
-  <NuxtLink :to="link" :class="[ 'project', id ]">
+  <NuxtLink :to="link" :class="[ 'project', id ]" :style="backgroundStyle">
     <div class="block">
       <NuxtImg :src="icon" alt="logo" class="logo" />
       <h2 class="title" v-text="title" />
@@ -52,19 +60,6 @@ const description = computed(() => props.data?.description)
   +desktop
     padding: 40px
     background-position: 100% 100%
-
-  &.idled
-    background-image: url('~/assets/images/project/idled_bg.webp')
-  &.tbhc
-    background-image: url('~/assets/images/project/tbhc_bg.webp')
-  &.secret
-    background-image: url('~/assets/images/project/secret_bg.webp')
-  &.zynthar
-    background-image: url('~/assets/images/project/zynthar_bg.webp')
-  &.diva_rogue
-    background-image: url('~/assets/images/project/diva_rogue_bg.webp')
-  &.dusty_cassette
-    background-image: url('~/assets/images/project/dusty_cassette_bg.webp')
 
   .block
     width: 100%
