@@ -146,9 +146,6 @@ const description = computed(() => props.data?.description)
     display: none
     +desktop
       display: block
-      width: 300px
-    +desktop-xl
-      width: 360px
 
   .mascote_tbhc_mobile
     position: absolute
