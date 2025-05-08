@@ -11,6 +11,52 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=63072000; includeSubDomains; preload"
+          },
+          {
+            "key": "Cross-Origin-Opener-Policy",
+            "value": "same-origin"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(mp4)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "must-revalidate, public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|png|webp|svg|woff|woff2|eot|etf|ttf)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "must-revalidate, public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "must-revalidate, public, max-age=31536000"
+          }
+        ]
+      }
     ]
   }
 }

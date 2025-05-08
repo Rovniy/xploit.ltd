@@ -8,7 +8,7 @@
       <NuxtLink to="/idled-top10-season-rewards" class="link">IDLED Survival Rewards</NuxtLink>
     </div>
 
-    <span class="copy" v-text="copyright.label" />
+    <span class="copy" v-text="copyright.company" />
   </div>
 </template>
 

@@ -29,14 +29,9 @@ export default defineNuxtConfig({
 
     devtools: {enabled: true},
 
-    modules: ['@zadigetvoltaire/nuxt-gtm', '@nuxt/image'],
+    modules: ['@nuxt/image'],
 
-    gtm: {
-        id: 'GTM-NJPW8K97',
-        nonce: '3464ff42c',
-    },
-
-    compatibilityDate: '2024-12-06',
+    compatibilityDate: '2025-08-05',
 
     css: [
         '@/assets/style/style.sass',
