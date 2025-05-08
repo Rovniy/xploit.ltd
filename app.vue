@@ -1,8 +1,8 @@
 <script setup>
 useHead({
-  titleTemplate: (title) => (title ? `${title} | XPLOIT` : 'XPLOIT'),
+  titleTemplate: (title) => (title ? `${title} | XPLOIT Ltd.` : 'XPLOIT Ltd.'),
   meta: [
-    { name: 'author', content: 'Andrey Rovnyi' }
+    { name: 'author', content: 'Andrey (Ravy) Rovnyi' }
   ]
 });
 </script>

@@ -59,17 +59,17 @@ const data = {
   },
   zynthar: {
     id: 'zynthar',
-    link: '/project/zynthar',
+    link: 'https://zynthar.rocks',
     icon: '/project/zynthar_logo.webp',
     title: 'ZYNTHAR',
-    description: 'Zynthar is a musical force where chaos meets melody, and emotions turn into sound.',
+    description: 'Post-hardcore from Los Angeles. Loud, emotional, and brutally honest',
   },
   diva_rogue: {
     id: 'diva_rogue',
-    link: '/project/diva_rogue',
+    link: 'https://divarogue.com',
     icon: '/project/diva_rogue_logo.webp',
     title: 'Diva Rogue',
-    description: 'Diva Rogue is the raw, unapologetic voice of Brooklyn—a solo artist blending the grit of rap, the soul of R&B, and the power of pop into a fearless, electrifying sound.',
+    description: 'Fierce sound, raw emotion, and unapologetic artistry that dares to break every rule',
   },
   dusty_cassette: {
     id: 'dusty_cassette',
