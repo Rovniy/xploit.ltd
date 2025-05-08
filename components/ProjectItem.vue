@@ -1,3 +1,25 @@
+<template>
+  <NuxtLink :to="link" :class="[ 'project', id ]" rel="noreferrer" target="_blank">
+    <div class="block">
+      <NuxtImg
+          :src="icon"
+          :alt="`${title}-logo`"
+          class="logo"
+          width="100"
+          height="100"
+          :preload="props.preload"
+          :loading="props.preload ? 'eager' : 'lazy'" />
+      <h2 class="title" v-text="title" />
+      <p class="description" v-text="description" />
+    </div>
+
+    <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/project/idled_mascote.webp" class="mascote_idled" width="300" height="300" />
+    <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/project/idled_mascote_mobile.webp" class="mascote_idled_mobile" width="140" height="146" />
+    <NuxtImg v-if="data?.id === 'tbhc'" alt="tiny boo mascote" src="/project/tbhc_mascote.webp" class="mascote_tbhc" width="360" height="360" />
+    <NuxtImg v-if="data?.id === 'tbhc'" alt="tiny boo mascote" src="/project/tbhc_mascote_mobile.webp" class="mascote_tbhc_mobile" width="100" height="133" />
+  </NuxtLink>
+</template>
+
 <script setup lang="ts">
 interface IData {
   id: string
@@ -7,10 +29,13 @@ interface IData {
   description: string
 }
 interface IProps {
-  data: IData|null
+  data: IData|null,
+  preload: boolean
 }
+
 const props = withDefaults(defineProps<IProps>(), {
-  data: null
+  data: null,
+  preload: false
 })
 
 const id = computed(() => props.data?.id)
@@ -19,21 +44,6 @@ const link = computed(() => props.data?.link || '')
 const title = computed(() => props.data?.title)
 const description = computed(() => props.data?.description)
 </script>
-
-<template>
-  <NuxtLink :to="link" :class="[ 'project', id ]">
-    <div class="block">
-      <NuxtImg :src="icon" alt="logo" class="logo" />
-      <h2 class="title" v-text="title" />
-      <p class="description" v-text="description" />
-    </div>
-
-    <NuxtImg v-if="data?.id === 'idled'" src="/project/idled_mascote.webp" class="mascote_idled" />
-    <NuxtImg v-if="data?.id === 'idled'" src="/project/idled_mascote_mobile.webp" class="mascote_idled_mobile" />
-    <NuxtImg v-if="data?.id === 'tbhc'" src="/project/tbhc_mascote.webp" class="mascote_tbhc" />
-    <NuxtImg v-if="data?.id === 'tbhc'" src="/project/tbhc_mascote_mobile.webp" class="mascote_tbhc_mobile" />
-  </NuxtLink>
-</template>
 
 <style scoped lang="sass">
 .project

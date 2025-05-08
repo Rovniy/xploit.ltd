@@ -1,16 +1,18 @@
 <template>
   <div class="btn_area">
-    <a :class="['link_btn', item.type ]"
-       v-for="item in links"
-       :key="item.type"
-       :href="item.href"
-       target="_blank">
-      <img :src="`/img/logo/${item.type}.svg`"
-           :alt="item.type"
-           class="icon">
+    <NuxtLink :class="['link_btn', item.type ]"
+              v-for="item in links"
+              :key="item.type"
+              rel="noreferrer"
+              :href="item.href"
+              target="_blank">
+      <NuxtImg :src="`/logo/${item.type}.svg`"
+               width="30" height="30"
+               :alt="item.type"
+               class="icon" />
 
-      <span class="text" v-text="item.title" />
-    </a>
+        <span class="text" v-text="item.title"/>
+    </NuxtLink>
   </div>
 </template>
 
@@ -20,9 +22,11 @@ type TLink = {
   type: string
   href: string
 }
+
 interface IProps {
   links: TLink[]
 }
+
 withDefaults(defineProps<IProps>(), {
   links: () => []
 })

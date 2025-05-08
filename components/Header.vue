@@ -1,23 +1,20 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="header">
     <NuxtLink to="/" class="logotype">
-      <NuxtImg src="/misc/logo.svg" alt="logo" class="logo" />
+      <NuxtImg src="/misc/logo.svg" alt="logo" class="logo" width="160" height="26" />
     </NuxtLink>
 
     <div class="social">
-<!--      <NuxtLink to="https://x.com/xploitltd" class="icon">-->
-<!--        <NuxtImg src="/misc/x.svg" alt="x" />-->
-<!--      </NuxtLink>-->
-
-      <NuxtLink to="https://t.me/xploitravy" class="icon">
+      <NuxtLink :to="contacts.telegramLink" class="icon" rel="noreferrer" target="_blank">
         <NuxtImg src="/misc/telegram.svg" alt="telegram" />
       </NuxtLink>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { contacts } from '~/config'
+</script>
 
 <style scoped lang="sass">
 .header

@@ -1,20 +1,20 @@
-<script setup lang="ts">
-const year = computed(() => new Date().getFullYear())
-</script>
-
 <template>
   <div class="footer">
-    <NuxtLink to="mailto:games@xploit.ltd" class="contacts">
-        games@xploit.ltd
+    <NuxtLink :to="`mailto:${contacts.email}`" class="contacts">
+        {{ contacts.email }}
     </NuxtLink>
 
     <div class="links_area">
       <NuxtLink to="/idled-top10-season-rewards" class="link">IDLED Survival Rewards</NuxtLink>
     </div>
 
-    <span class="copy">© 2006-{{ year }} Xploit.ltd All Rights Reserved</span>
+    <span class="copy" v-text="copyright.label" />
   </div>
 </template>
+
+<script setup lang="ts">
+import { contacts, copyright } from '~/config'
+</script>
 
 <style scoped lang="sass">
 .footer
@@ -49,6 +49,6 @@ const year = computed(() => new Date().getFullYear())
 
   .copy
     font: 400 14px/20px var(--main-font)
-    color: var(--uicolor-dark-gray)
+    color: var(--uicolor-gray)
 
 </style>

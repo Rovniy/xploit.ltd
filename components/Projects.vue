@@ -1,16 +1,16 @@
 <template>
   <div class="projects">
     <div class="main">
-      <ProjectItem :data="data.idled" />
+      <ProjectItem :data="data.idled" preload />
     </div>
 
     <div class="semi_area">
       <div class="secondary">
-        <ProjectItem :data="data.tbhc" />
+        <ProjectItem :data="data.tbhc" preload/>
       </div>
 
       <div class="secondary">
-        <ProjectItem :data="data.zynthar" />
+        <ProjectItem :data="data.zynthar" preload />
       </div>
     </div>
 

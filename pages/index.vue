@@ -7,13 +7,12 @@
 </style>
 
 <script setup lang="ts">
+import {meta} from '~/config'
+
 useHead({
   meta: [
-    {
-      name: 'description',
-      content: 'We make unique projects and games. Let\'s make them together!'
-    },
-    { name: 'keywords', content: 'xploit, games, projects' }
+    {name: 'description', content: meta.description},
+    {name: 'keywords', content: meta.keywords}
   ]
 })
 </script>
