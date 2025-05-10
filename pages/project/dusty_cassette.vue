@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Dusty Cassette</h1>
 
-    <img src="~/assets/images/project/dusty_cassette_logo.webp" alt="Dusty Cassette">
+    <NuxtImg src="/icon/dusty_cassette_logo.webp" alt="Dusty Cassette" width="100" height="100" />
 
     <h2>Listen us:</h2>
 

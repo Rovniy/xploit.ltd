@@ -13,7 +13,7 @@ export const contacts = {
 }
 
 export const copyright = {
-    company: `© 2006-${new Date().getFullYear()} Xploit.ltd All Rights Reserved`
+    company: `© 2006-${new Date().getFullYear()} XPLOIT LTD. All Rights Reserved`
 }
 
 export const projects = {
