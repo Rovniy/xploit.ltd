@@ -5,7 +5,7 @@
     </NuxtLink>
 
     <div class="links_area">
-      <NuxtLink v-for="item in links" :kye="item.link" :to="item.link" class="link">
+      <NuxtLink v-for="item in links" :kye="item.link" :to="item.link" class="link" :target="item.target" />
         {{ item.text }}
       </NuxtLink>
     </div>
@@ -20,11 +20,13 @@ import { contacts, copyright } from '~/config'
 const links = [
   {
     link: '/idled-top10-season-rewards',
-    text: 'IDLED Survival Rewards'
+    text: 'IDLED Survival Rewards',
+    target: '_self',
   },
   {
     link: 'https://www.crunchbase.com/organization/xploit',
-    text: 'Crunchbase'
+    text: 'Crunchbase Profile',
+    target: '_blank',
   }
 ]
 </script>
