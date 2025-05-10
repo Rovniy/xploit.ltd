@@ -5,7 +5,7 @@
     </NuxtLink>
 
     <div class="links_area">
-      <NuxtLink v-for="item in links" :kye="item.link" :to="item.link" class="link" :target="item.target" />
+      <NuxtLink v-for="item in links" :kye="item.link" :to="item.link" class="link" :target="item.target">
         {{ item.text }}
       </NuxtLink>
     </div>

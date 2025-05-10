@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="link" :class="[ 'project', id ]" rel="noreferrer" target="_blank">
+  <NuxtLink :to="link" :class="[ 'project', id ]" rel="noreferrer" target="_blank" :style="backgroundStyle">
     <div class="block">
       <NuxtImg
           :src="icon"
@@ -13,10 +13,10 @@
       <p class="description" v-text="description" />
     </div>
 
-    <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/project/idled_mascote.webp" class="mascote_idled" width="300" height="300" />
-    <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/project/idled_mascote_mobile.webp" class="mascote_idled_mobile" width="140" height="146" />
-    <NuxtImg v-if="data?.id === 'tbhc'" alt="tiny boo mascote" src="/project/tbhc_mascote.webp" class="mascote_tbhc" width="360" height="360" />
-    <NuxtImg v-if="data?.id === 'tbhc'" alt="tiny boo mascote" src="/project/tbhc_mascote_mobile.webp" class="mascote_tbhc_mobile" width="100" height="133" />
+    <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/particles/idled_mascote.webp" class="mascote_idled" width="300" height="300" />
+    <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/particles/idled_mascote_mobile.webp" class="mascote_idled_mobile" width="140" height="146" />
+    <NuxtImg v-if="data?.id === 'tbhc'" alt="tiny boo mascote" src="/particles/tbhc_mascote.webp" class="mascote_tbhc" width="360" height="360" />
+    <NuxtImg v-if="data?.id === 'tbhc'" alt="tiny boo mascote" src="/particles/tbhc_mascote_mobile.webp" class="mascote_tbhc_mobile" width="100" height="133" />
   </NuxtLink>
 </template>
 
@@ -24,13 +24,13 @@
 interface IData {
   id: string
   link?: string
-  icon: string
   title: string
-  description: string
+  description: string,
+  background?: string
 }
 interface IProps {
   data: IData|null,
-  preload: boolean
+  preload?: boolean
 }
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -39,10 +39,17 @@ const props = withDefaults(defineProps<IProps>(), {
 })
 
 const id = computed(() => props.data?.id)
-const icon = computed(() => props.data?.icon)
+const icon = computed(() => `/icon/${props.data?.id}_logo.webp`)
 const link = computed(() => props.data?.link || '')
 const title = computed(() => props.data?.title)
 const description = computed(() => props.data?.description)
+const backgroundStyle = computed(() => {
+  if (!props.data?.id) return {}
+
+  return {
+    backgroundImage: `url(/images/project/${id.value}_bg.webp)`,
+  }
+})
 </script>
 
 <style scoped lang="sass">
@@ -61,20 +68,6 @@ const description = computed(() => props.data?.description)
   text-decoration: none
   +desktop
     padding: 40px
-    background-position: 100% 100%
-
-  &.idled
-    background-image: url('~/assets/images/project/idled_bg.webp')
-  &.tbhc
-    background-image: url('~/assets/images/project/tbhc_bg.webp')
-  &.secret
-    background-image: url('~/assets/images/project/secret_bg.webp')
-  &.zynthar
-    background-image: url('~/assets/images/project/zynthar_bg.webp')
-  &.diva_rogue
-    background-image: url('~/assets/images/project/diva_rogue_bg.webp')
-  &.dusty_cassette
-    background-image: url('~/assets/images/project/dusty_cassette_bg.webp')
 
   .block
     width: 100%
