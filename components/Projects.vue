@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <main class="projects">
     <div class="main">
       <ProjectItem :data="projects.diva_rogue" preload />
     </div>
@@ -29,7 +29,7 @@
         <ProjectItem :data="projects.secret" />
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

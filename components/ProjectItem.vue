@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="link" :class="[ 'project', id ]" rel="noreferrer" target="_blank" :style="backgroundStyle">
-    <div class="block">
+    <article class="block">
       <NuxtImg
           :src="icon"
           :alt="`${title}-logo`"
@@ -11,7 +11,7 @@
           :loading="props.preload ? 'eager' : 'lazy'" />
       <h2 class="title" v-text="title" />
       <p class="description" v-text="description" />
-    </div>
+    </article>
 
     <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/particles/idled_mascote.webp" class="mascote_idled" width="300" height="300" />
     <NuxtImg v-if="data?.id === 'idled'" alt="idled mascote" src="/particles/idled_mascote_mobile.webp" class="mascote_idled_mobile" width="140" height="146" />

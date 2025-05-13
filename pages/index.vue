@@ -1,4 +1,5 @@
 <template>
+  <Intro />
   <Projects/>
 </template>
 

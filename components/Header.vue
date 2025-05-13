@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <header class="header">
     <NuxtLink to="/" class="logotype">
       <NuxtImg src="/misc/logo.svg" alt="logo" class="logo" width="160" height="26" />
     </NuxtLink>
@@ -9,7 +9,7 @@
         <NuxtImg src="/misc/telegram.svg" alt="telegram" />
       </NuxtLink>
     </div>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">

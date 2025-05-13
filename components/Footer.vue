@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <NuxtLink :to="`mailto:${contacts.email}`" class="contacts">
         {{ contacts.email }}
     </NuxtLink>
@@ -11,7 +11,7 @@
     </div>
 
     <span class="copy" v-text="copyright.company" />
-  </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
