@@ -20,13 +20,21 @@
       <ProjectItem :data="projects.elo_pub" />
     </div>
 
+    <div class="main">
+		<ProjectItem :data="projects.dusty_cassette"/>
+	</div>
+
+    <div class="main">
+		<ProjectItem :data="projects.start_v_it"/>
+	</div>
+
     <div class="semi_area">
       <div class="secondary">
-        <ProjectItem :data="projects.dusty_cassette"/>
+		  <ProjectItem :data="projects.secret" />
       </div>
 
       <div class="secondary">
-        <ProjectItem :data="projects.secret" />
+        <ProjectItem :data="projects.secret_game" />
       </div>
     </div>
   </main>

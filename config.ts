@@ -32,18 +32,24 @@ export const projects = {
     secret: {
         id: 'secret',
         title: 'Secret Project',
-        description: 'A secret project? which is under active development! The announcement will be in the 2st quarter of 2025.'
+        description: 'A secret project? which is under active development! The announcement will be in the 4st quarter of 2025.'
     },
     secret_game: {
-        id: 'secret',
+        id: 'secret_game',
         title: 'Secret Game',
-        description: 'WOW! The game? which is under active development! The announcement will be in the 3st quarter of 2025.'
+        description: 'WOW! The game? which is under active development! The announcement will be in the 1st quarter of 2026.'
     },
     zynthar: {
         id: 'zynthar',
         link: 'https://zynthar.rocks',
         title: 'ZYNTHAR',
         description: 'Post-hardcore from Los Angeles. Loud, emotional, and brutally honest'
+    },
+    start_v_it: {
+        id: 'start_v_it',
+        link: 'https://start-v-it.ru',
+        title: 'Start v IT',
+        description: 'Become an IT specialist with a job guarantee in 1-2 months'
     },
     diva_rogue: {
         id: 'diva_rogue',
